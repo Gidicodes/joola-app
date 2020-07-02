@@ -134,6 +134,7 @@ class TripService
         return [
             'all_trips' => $this->trip->count(),
             'pending_trips' => $this->trip->getTripByStatusCount(2),
+            'processing_trips' => $this->trip->getTripByStatusCount(1),
             'completed_trips' => $this->trip->getTripByStatusCount(4),
         ];
     }
